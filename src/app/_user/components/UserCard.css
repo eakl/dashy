@@ -1,0 +1,88 @@
+.tw-card {
+
+  &__header {
+    /*border: 1px solid black;*/
+    background-color: #eafbf1;
+    width: 650px;
+    height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &__border {
+      /*border: 1px solid black;*/
+      width: 10px;
+      background-color: #2ecc71;
+    }
+
+    &__price {
+      /*border: 1px solid black;*/
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+    }
+
+    &__main {
+      /*border: 1px solid black;*/
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 20px;
+
+      &__name {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      &__email {
+        font-size: .8rem;
+        font-style: italic;
+      }
+
+      &__msg {
+        margin-top: 3px;
+      }
+    }
+
+    &__country {
+      /*border: 1px solid black;*/
+      width: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__time {
+      /*border: 1px solid black;*/
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 5px;
+      font-size: .8rem
+    }
+  }
+
+  &__panel {
+    background-color: #aaa;
+    padding: 15px;
+    height: 0;
+    display: none;
+  }
+
+  &__panel-show {
+    border-top: 1px solid #2ecc71;
+    background-color: #eee;
+    padding: 15px;
+    margin-left: 20px;
+    width: 650px;
+    height: 100px;
+    display: block;
+  }
+}
