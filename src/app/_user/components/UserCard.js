@@ -1,61 +1,55 @@
 'use strcit'
 
 import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-
-import { toggleUserCard } from '../actions'
 
 import './UserCard.css'
 
-const UserCard = (props) => {
-  // console.log(props)
+const UserCard = ({ card, toggleUserCard}) => {
+  let border = { }
+  let header = { }
+  if (card.status === 'active') {
+    border.backgroundColor = '#2ecc71'
+    header.backgroundColor = '#d5f6e3'
+  }
+  else if (card.status === 'halt') {
+    border.backgroundColor = '#f39c12'
+    header.backgroundColor = '#fcebcf'
+  }
+  else {
+    border.backgroundColor = '#c0392b'
+    header.backgroundColor = '#f6d9d5'
+  }
 
   return (
-    <div className='tw-card'>
-      <div className='tw-card__header'>
-        <div className='tw-card__header__border'></div>
+    <div className='tw-card' onClick={() => toggleUserCard(card.id)}>
+      <div className='tw-card__header' style={header}>
+        <div className='tw-card__header__border' style={border}></div>
         <div className='tw-card__header__price'>
-          {'$'+props.total}
+          {'$' + card.total}
         </div>
         <div className='tw-card__header__main'>
           <div className='tw-card__header__main__name'>
-            {props.name}
+            {card.name}
           </div>
           <div className='tw-card__header__main__email'>
-            {props.email}
+            {card.email}
           </div>
           <div className='tw-card__header__main__msg'>
             will churn soon
           </div>
         </div>
         <div className='tw-card__header__country'>
-          {props.country}
+          {card.country}
         </div>
         <div className='tw-card__header__time'>
-          {props.hour+'h'}
+          {card.hour + 'h'}
         </div>
       </div>
-      <div className={props.isActive ? 'tw-card__panel-show' : 'tw-card__panel'}>
+      <div className={card.isActive ? 'tw-card__panel-show' : 'tw-card__panel'}>
         Hello 1
       </div>
     </div>
   )
 }
 
-// const mapStateToProps = (state) => ({
-//   isActive: state.user_card.isActive
-// })
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//     toggleUserCard: (id) => toggleUserCard(id)
-//   }, dispatch)
-// }
-
 export default UserCard
-
-// connect(
-//   null,
-//   mapDispatchToProps
-// )(UserCard)

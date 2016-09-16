@@ -2,19 +2,43 @@
 
 import * as t from './actionTypes'
 
-const data = require('../data')
+// const dataObject = require('../dataObject')
+const dataKeyed = require('../dataKeyed')
 
-const initialState = data
+const initialState = dataKeyed
+
+// Reduce over an array of objects
+
+// export const userCardReducer = (state = initialState, action) => {
+//   switch(action.type) {
+//     case t.TOGGLE_USER_CARD: {
+//       const newState = [ ...state ]
+//       const cardIdx = newState.findIndex((x) => x.id === action.id)
+//       const updatedCard = newState
+//       .slice(0, cardIdx)
+//       .concat([{ ...newState[cardIdx], isActive: !newState[cardIdx].isActive }])
+//       .concat(newState.slice(cardIdx + 1))
+//       return updatedCard
+//     }
+//     default:
+//       return state
+//   }
+// }
+
+// Reduce over an keyed object
 
 export const userCardReducer = (state = initialState, action) => {
   switch(action.type) {
     case t.TOGGLE_USER_CARD: {
-      const newState = [ ...state ]
-      const card = newState.findIndex(x => x.id === action.id)
-      const updatedCard = { ...newState, isActive: !newState[card].isActive }
-      return [updatedCard]
+      const newState = {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          isActive: !state[action.id].isActive
+        }
+      }
+      return newState
     }
-    // isActive: !state.isActive
     default:
       return state
   }

@@ -4,22 +4,19 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { toggleUserCard } from '../_user/actions'
-
 import UserCard from '../_user/components/UserCard'
+import { toggleUserCard } from '../_user/actions'
 
 import './App.css'
 
 const App = (props) => {
-  // console.log(props.cards)
-
   return (
     <section>
-      {props.cards.map((x, i) => (
+      {Object.keys(props.cards).map((x) => ( // props.cards.map((x) => (...
         <UserCard
-          { ...x }
-          key={x.id}
-          onClick={props.toggleUserCard(props.cards[i].id)} />
+          card={props.cards[x]} // card={x}
+          key={x} // key={x.id}
+          toggleUserCard={props.toggleUserCard} />
       ))}
     </section>
   )

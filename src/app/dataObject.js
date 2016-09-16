@@ -25,7 +25,8 @@ module.exports = [{
     }
   ],
   total: 133,
-  isActive: false
+  isActive: false,
+  status: 'active'
 },
 {
   id: 2,
@@ -54,7 +55,8 @@ module.exports = [{
     }
   ],
   total: 110,
-  isActive: false
+  isActive: false,
+  status: 'churn'
 },
 {
   id: 3,
@@ -83,7 +85,8 @@ module.exports = [{
     }
   ],
   total: 99,
-  isActive: false
+  isActive: false,
+  status: 'halt'
 },
 {
   id: 4,
@@ -112,5 +115,36 @@ module.exports = [{
     }
   ],
   total: 11,
-  isActive: false
+  isActive: false,
+  status: 'halt'
+},
+{
+  id: 5,
+  name: 'Jean Bon',
+  email: 'jean.b@example.com',
+  country: 'Iran',
+  hour: 100,
+  history: [
+    {
+      id: 'exhjeg7kjajkxmj45784cggc784t5c7tcks',
+      payment: 'Credit Card',
+      licences: 12,
+      amount: 100
+    },
+    {
+      id: 'exhjegdfjgkjdsd74578jxkeh4i73y57icm4',
+      payment: 'Invoice',
+      licences: 4,
+      amount: 44
+    },
+    {
+      id: 'exhjedjhgxhjkcurcmhcurtc77756c75mcje',
+      payment: 'Coins',
+      licences: 155,
+      amount: 1000
+    }
+  ],
+  total: 200,
+  isActive: false,
+  status: 'active'
 }]
