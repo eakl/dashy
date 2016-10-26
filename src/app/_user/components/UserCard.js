@@ -21,31 +21,31 @@ const UserCard = ({ card, toggleUserCard}) => {
   }
 
   return (
-    <div className='tw-card' onClick={() => toggleUserCard(card.id)}>
-      <div className='tw-card__header' style={header}>
-        <div className='tw-card__header__border' style={border}></div>
-        <div className='tw-card__header__price'>
+    <div className='dashy-card' onClick={() => toggleUserCard(card.id)}>
+      <div className='dashy-card__header' style={header}>
+        <div className='dashy-card__header__border' style={border}></div>
+        <div className='dashy-card__header__price'>
           {'$' + card.total}
         </div>
-        <div className='tw-card__header__main'>
-          <div className='tw-card__header__main__name'>
+        <div className='dashy-card__header__main'>
+          <div className='dashy-card__header__main__name'>
             {card.name}
           </div>
-          <div className='tw-card__header__main__email'>
+          <div className='dashy-card__header__main__email'>
             {card.email}
           </div>
-          <div className='tw-card__header__main__msg'>
+          <div className='dashy-card__header__main__msg'>
             will churn soon
           </div>
         </div>
-        <div className='tw-card__header__country'>
+        <div className='dashy-card__header__country'>
           {card.country}
         </div>
-        <div className='tw-card__header__time'>
+        <div className='dashy-card__header__time'>
           {card.hour + 'h'}
         </div>
       </div>
-      <div className={card.isActive ? 'tw-card__panel-show' : 'tw-card__panel'}>
+      <div className={card.isActive ? 'dashy-card__panel-show' : 'dashy-card__panel'}>
         Hello 1
       </div>
     </div>
